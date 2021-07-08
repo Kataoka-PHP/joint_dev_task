@@ -17,7 +17,7 @@ print("#####q2#####".PHP_EOL);
 $array1 = ["dog", "cat", "fish"];
 $array2 = ["bird", "bat", "tiger"];
 
-  # 以下に回答を記載
+# 以下に回答を記載
   $array = array_merge($array1, $array2);
   print_r($array);
 ?>
