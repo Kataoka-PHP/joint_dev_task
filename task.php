@@ -24,17 +24,34 @@ $array2 = ["bird", "bat", "tiger"];
 
 echo PHP_EOL;
 
+<?php
+
 print("#####q3#####".PHP_EOL);
 $numbers = [1, 5, 8, 10, 2, 3, 2, 3, 1, 4, 5, 9];
 
   # 以下に回答を記載
+  $target = 3;
+  $count = 0;
+      foreach($numbers as $number){
+          if($number == $target){
+              $count +=1;
+          }
+      }
+      echo '回数は、'.$count;
+  ?>
 
 echo PHP_EOL;
+
+<?php
 
 print("#####q4#####".PHP_EOL);
 $sports = ["サッカー", "フットサル", null, "野球", "バスケ", null, "バレー"];
 
   # 以下に回答を記載
+  $dup_deletion = array_unique($sports);
+  print_r($dup_deletion);
+
+  ?>
 
 echo PHP_EOL;
 
