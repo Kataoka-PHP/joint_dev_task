@@ -42,16 +42,12 @@ $numbers = [1, 5, 8, 10, 2, 3, 2, 3, 1, 4, 5, 9];
 
 echo PHP_EOL;
 
-<?php
+
 
 print("#####q4#####".PHP_EOL);
 $sports = ["サッカー", "フットサル", null, "野球", "バスケ", null, "バレー"];
 
   # 以下に回答を記載
-  $dup_deletion = array_unique($sports);
-  print_r($dup_deletion);
-
-  ?>
 
 echo PHP_EOL;
 
