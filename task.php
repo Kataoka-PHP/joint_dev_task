@@ -49,7 +49,7 @@ print("#####q4#####".PHP_EOL);
 $sports = ["サッカー", "フットサル", null, "野球", "バスケ", null, "バレー"];
 
   # 以下に回答を記載
-$sports = array_unique($sports);
+$sports = str_replace('null', '', $sports);
 $sports = array_filter($sports);
 print_r($sports);
 
@@ -130,19 +130,42 @@ echo PHP_EOL;
 
 ?>
 
+<?php
 print("#####q9#####".PHP_EOL);
 $names = ["田中", "佐藤", "佐々木", "高橋"];
 
   # 以下に回答を記載
+function show($n, $m)
+{
+  return "会員No.{$n} {$m}";
+}
 
+$a = [1, 2, 3, 4];
+
+$c = array_map('show', $a, $names);
+print_r($c);
+
+echo PHP_EOL;
+?>
+
+<?php
 echo PHP_EOL;
 
 print("#####q10#####".PHP_EOL);
 $foods = ["いか", "たこ", "うに", "しゃけ", "うにぎり", "うに軍艦", "うに丼", "高級なうに"];
 
   # 以下に回答を記載
+  {
+    if (preg_match("/うに/", $a)) {
+        echo '好物です'.PHP_EOL;
+    }else{
+        echo 'まぁまぁ好きです'.PHP_EOL;
+    }
+}
 
+$A = array_map('check', $foods);
 echo PHP_EOL;
+?>
 
 print("#####q11#####".PHP_EOL);
 $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
