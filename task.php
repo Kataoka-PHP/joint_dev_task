@@ -247,7 +247,24 @@ $data2 = ["name" => "yamada", "hobby" => "baseball", "role" => "normal"];
 
   # 以下に回答を記載
 
+<?php
+
+$search = 'age';
+
+if (array_key_exists($search, $data1)) {
+    echo 'OK'.PHP_EOL;
+}else{
+    echo 'NG'.PHP_EOL;
+}
+
+if (array_key_exists($search, $data2)) {
+    echo 'OK'.PHP_EOL;
+}else{
+    echo 'NG'.PHP_EOL;
+}
 echo PHP_EOL;
+
+?>
 
 print("#####q16#####".PHP_EOL);
 $users = [
@@ -258,8 +275,16 @@ $users = [
 ];
 
   # 以下に回答を記載
+<?php
+
+foreach ($users as $key => $value) {
+  echo '私の名前は'.$value['name'].'です'.PHP_EOL;
+  echo '年齢は'.$value['age'].'です'.PHP_EOL;
+}
 
 echo PHP_EOL;
+
+?>
 
 print("#####q17#####".PHP_EOL);
 class User
