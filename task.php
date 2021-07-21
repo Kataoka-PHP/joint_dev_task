@@ -241,13 +241,15 @@ echo PHP_EOL;
 
 ?>
 
+<?php
+
 print("#####q15#####".PHP_EOL);
 $data1 = ["name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin"];
 $data2 = ["name" => "yamada", "hobby" => "baseball", "role" => "normal"];
 
   # 以下に回答を記載
 
-<?php
+
 
 $search = 'age';
 
@@ -266,6 +268,8 @@ echo PHP_EOL;
 
 ?>
 
+<?php
+
 print("#####q16#####".PHP_EOL);
 $users = [
   ["name" => "satou", "age" => 22],
@@ -275,23 +279,39 @@ $users = [
 ];
 
   # 以下に回答を記載
-<?php
 
 foreach ($users as $key => $value) {
-  echo '私の名前は'.$value['name'].'です'.PHP_EOL;
-  echo '年齢は'.$value['age'].'です'.PHP_EOL;
+  echo '私の名前は'.$value['name'].'です。年齢は'.$value['age'].'歳です。'.PHP_EOL;
 }
 
 echo PHP_EOL;
 
 ?>
 
+<?php
 print("#####q17#####".PHP_EOL);
 class User
 {
 
   # コードを追加
 
+    public $name;
+    public $age;
+    public $sex;
+
+    public function __construct($name, $age, $sex) {
+        $this->name = $name;
+        $this->age = $age;
+        $this->sex = $sex;
+    }
+
+
+    public function info() {
+        echo '名前：'.$this->name.PHP_EOL;
+        echo '年齢：'.$this->age.PHP_EOL;
+        echo '性別：'.$this->sex.PHP_EOL;
+    
+    }
 }
 
 $user1 = new User("神里", 32, "男");
@@ -302,6 +322,8 @@ print("-------------".PHP_EOL);
 $user2->info();
 
 echo PHP_EOL;
+
+?>
 
 print("#####q18#####".PHP_EOL);
 
