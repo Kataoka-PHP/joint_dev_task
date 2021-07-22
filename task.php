@@ -325,9 +325,32 @@ echo PHP_EOL;
 
 ?>
 
+<?php
+
 print("#####q18#####".PHP_EOL);
 
   # コードを追加
+class Man
+{
+
+public $name;
+public $age;
+
+function __construct($name, $age) {
+    $this->name = $name;
+    $this->age = $age;
+}
+
+function introduce() {
+    //あじーさんの年齢以下なら、$man2を呼び出す
+    if($this->age < 32){
+        echo 'はいさいまいど〜，'.$this->name.'です！！！'.PHP_EOL;
+    }else{
+        echo 'こんにちは,'.$this->name.'と申します。宜しくお願いいたします。'.PHP_EOL;
+    }
+}
+
+}
 
 $man1 = new Man("あじー", 32);
 $man2 = new Man("ゆたぼん", 10);
@@ -336,6 +359,9 @@ $man1->introduce();
 $man2->introduce();
 
 echo PHP_EOL;
+  
+
+?>
 
 print("#####q19#####".PHP_EOL);
 class Item{
