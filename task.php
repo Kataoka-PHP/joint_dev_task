@@ -363,11 +363,15 @@ echo PHP_EOL;
 
 ?>
 
+<?php
+
 print("#####q19#####".PHP_EOL);
 class Item{
   # 以下を修正して下さい
 
-  protected $name;
+  public $name;
+  //Itemクラス外で使用するので、protected->publicに変更
+  
 
   function __construct($book_name){
     $this->name = $book_name;
@@ -380,21 +384,56 @@ print($book->name.PHP_EOL);
 
 echo PHP_EOL;
 
+?>
+
+<?php
 print("#####q20#####".PHP_EOL);
 class Human
 {
-
   # コードを追加
-
+    // property
+    public $name;
+    public $age;
+  
+    //Humanクラスのインスタンス引数から名前と年齢の情報を受け取る
+    function __construct($human_name, $human_age) {
+        $this->name = $human_name;
+        $this->age = $human_age;
+    }
 }
 
 class Zoo
+//Zooクラスのインスタンス引数から区分と入場料の情報を受け取る
+//Humanクラスの$human_ageにアクセスする
+//もし、$human_ageが０〜５歳ならzooクラスのインスタンス引数のinfantキーの値を返す
+//もし、$human_ageが６〜１２歳ならzooクラスのインスタンス引数のchildrenキーの値を返す
+//もし、$human_ageが13〜６４歳ならzooクラスのインスタンス引数のadultキーの値を返す
+//もし、$human_ageが65〜120歳ならzooクラスのインスタンス引数のseniorキーの値を返す
 {
 
   # コードを追加
-
+  //property
+    public $classification;
+    public $entry_fee;
+    
+    function __construct($zoo_classification, $zoo_entry_fee) {
+        $this->classification = $zoo_classification;
+        $this->entry_fee = $zoo_entry_fee;
+    }
+        
+    function info_entry_fee(Human $human) {
+        if ($human->age <= 5) {
+            echo $human->name.'さんの入場料金は '.$this->entry_fee['infant'].' 円です'.PHP_EOL;
+        }elseif ($human->age <= 12) {
+            echo $human->name.'さんの入場料金は '.$this->entry_fee['children'].' 円です'.PHP_EOL;
+        }elseif ($human->age <= 64) {
+            echo $human->name.'さんの入場料金は '.$this->entry_fee['adult'].' 円です'.PHP_EOL;
+        }elseif ($human->age <= 120) {
+            echo $human->name.'さんの入場料金は '.$this->entry_fee['senior'].' 円です'.PHP_EOL;
+        }
+    }
 }
-
+  # コードを追加
 $zoo = new Zoo("旭山動物園",["infant" => 0, "children" => 400, "adult" => 800, "senior" => 500]);
 
 $human1 = new Human("たま", 3);
@@ -409,3 +448,27 @@ foreach($humans as $human){
 }
 
 echo PHP_EOL;
+
+?>
+
+print("#####q21#####".PHP_EOL);
+
+<?php
+
+for ($i = 1; $i <= 30; $i++) {
+  if ($i % 3 ==0 && $i % 5 ==0) {
+    echo 'FizzBuzz'.PHP_EOL;
+  }elseif ($i % 3 ==0 && $i % 7 ==0) {
+    echo 'FizzHoge'.PHP_EOL;
+  }elseif ($i % 3 == 0) {
+    echo 'Fizz'.PHP_EOL;
+  }elseif ($i % 5 ==0) {
+    echo 'Buzz'.PHP_EOL;
+  }elseif ($i % 7 ==0) {
+    echo 'Hoge'.PHP_EOL;
+  }else{
+    echo $i.PHP_EOL;
+    }
+}
+    
+?>
